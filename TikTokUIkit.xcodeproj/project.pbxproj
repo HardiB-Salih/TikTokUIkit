@@ -9,19 +9,49 @@
 /* Begin PBXBuildFile section */
 		D50450CB2C072DD900CD1F46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450CA2C072DD900CD1F46 /* AppDelegate.swift */; };
 		D50450CD2C072DD900CD1F46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450CC2C072DD900CD1F46 /* SceneDelegate.swift */; };
-		D50450CF2C072DD900CD1F46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450CE2C072DD900CD1F46 /* ViewController.swift */; };
 		D50450D42C072DDE00CD1F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50450D32C072DDE00CD1F46 /* Assets.xcassets */; };
 		D50450D72C072DDE00CD1F46 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D50450D62C072DDE00CD1F46 /* Base */; };
+		D50450E52C07314F00CD1F46 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450E42C07314F00CD1F46 /* HomeVC.swift */; };
+		D50450E92C07319A00CD1F46 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450E82C07319A00CD1F46 /* ExploreVC.swift */; };
+		D50450EB2C0731A700CD1F46 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450EA2C0731A700CD1F46 /* CameraVC.swift */; };
+		D50450ED2C0731BC00CD1F46 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450EC2C0731BC00CD1F46 /* NotificationVC.swift */; };
+		D50450EF2C0731CB00CD1F46 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450EE2C0731CB00CD1F46 /* ProfileVC.swift */; };
+		D50450F12C0731DF00CD1F46 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450F02C0731DF00CD1F46 /* UserListVC.swift */; };
+		D50450F32C0731EF00CD1F46 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450F22C0731EF00CD1F46 /* SignInVC.swift */; };
+		D50450F52C0731FB00CD1F46 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450F42C0731FB00CD1F46 /* SignUpVC.swift */; };
+		D50450F72C07320F00CD1F46 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450F62C07320F00CD1F46 /* SettingVC.swift */; };
+		D50450F92C07322D00CD1F46 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450F82C07322D00CD1F46 /* TabBarVC.swift */; };
+		D50450FB2C07325100CD1F46 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450FA2C07325100CD1F46 /* PostVC.swift */; };
+		D50450FD2C07326600CD1F46 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450FC2C07326600CD1F46 /* APICaller.swift */; };
+		D50450FF2C07327400CD1F46 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50450FE2C07327400CD1F46 /* StorageManager.swift */; };
+		D50451012C07328700CD1F46 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50451002C07328700CD1F46 /* DatabaseManager.swift */; };
+		D50451032C07329400CD1F46 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50451022C07329400CD1F46 /* AuthenticationManager.swift */; };
+		D50451052C0732B100CD1F46 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50451042C0732B100CD1F46 /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D50450C72C072DD900CD1F46 /* TikTokUIkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokUIkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50450CA2C072DD900CD1F46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D50450CC2C072DD900CD1F46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D50450CE2C072DD900CD1F46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D50450D32C072DDE00CD1F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D50450D62C072DDE00CD1F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D50450D82C072DDE00CD1F46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D50450E42C07314F00CD1F46 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D50450E82C07319A00CD1F46 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
+		D50450EA2C0731A700CD1F46 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		D50450EC2C0731BC00CD1F46 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		D50450EE2C0731CB00CD1F46 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		D50450F02C0731DF00CD1F46 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		D50450F22C0731EF00CD1F46 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		D50450F42C0731FB00CD1F46 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		D50450F62C07320F00CD1F46 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		D50450F82C07322D00CD1F46 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		D50450FA2C07325100CD1F46 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		D50450FC2C07326600CD1F46 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		D50450FE2C07327400CD1F46 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D50451002C07328700CD1F46 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		D50451022C07329400CD1F46 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		D50451042C0732B100CD1F46 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +84,93 @@
 		D50450C92C072DD900CD1F46 /* TikTokUIkit */ = {
 			isa = PBXGroup;
 			children = (
-				D50450CA2C072DD900CD1F46 /* AppDelegate.swift */,
-				D50450CC2C072DD900CD1F46 /* SceneDelegate.swift */,
-				D50450CE2C072DD900CD1F46 /* ViewController.swift */,
-				D50450D32C072DDE00CD1F46 /* Assets.xcassets */,
-				D50450D52C072DDE00CD1F46 /* LaunchScreen.storyboard */,
+				D50450E32C07310F00CD1F46 /* Manages */,
+				D50450E22C07310400CD1F46 /* ViewModels */,
+				D50450E12C0730FE00CD1F46 /* Models */,
+				D50450E02C0730F300CD1F46 /* Views */,
+				D50450DF2C0730E900CD1F46 /* Controllers */,
+				D50450DE2C0730D200CD1F46 /* Resorces */,
 				D50450D82C072DDE00CD1F46 /* Info.plist */,
 			);
 			path = TikTokUIkit;
+			sourceTree = "<group>";
+		};
+		D50450DE2C0730D200CD1F46 /* Resorces */ = {
+			isa = PBXGroup;
+			children = (
+				D50450D32C072DDE00CD1F46 /* Assets.xcassets */,
+				D50450CA2C072DD900CD1F46 /* AppDelegate.swift */,
+				D50450CC2C072DD900CD1F46 /* SceneDelegate.swift */,
+			);
+			path = Resorces;
+			sourceTree = "<group>";
+		};
+		D50450DF2C0730E900CD1F46 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D50450E72C07317500CD1F46 /* Others */,
+				D50450E62C07316F00CD1F46 /* Core */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D50450E02C0730F300CD1F46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D50450D52C072DDE00CD1F46 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D50450E12C0730FE00CD1F46 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D50450E22C07310400CD1F46 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D50450E32C07310F00CD1F46 /* Manages */ = {
+			isa = PBXGroup;
+			children = (
+				D50450FC2C07326600CD1F46 /* APICaller.swift */,
+				D50450FE2C07327400CD1F46 /* StorageManager.swift */,
+				D50451002C07328700CD1F46 /* DatabaseManager.swift */,
+				D50451022C07329400CD1F46 /* AuthenticationManager.swift */,
+				D50451042C0732B100CD1F46 /* HapticsManager.swift */,
+			);
+			path = Manages;
+			sourceTree = "<group>";
+		};
+		D50450E62C07316F00CD1F46 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D50450E42C07314F00CD1F46 /* HomeVC.swift */,
+				D50450E82C07319A00CD1F46 /* ExploreVC.swift */,
+				D50450EA2C0731A700CD1F46 /* CameraVC.swift */,
+				D50450EC2C0731BC00CD1F46 /* NotificationVC.swift */,
+				D50450EE2C0731CB00CD1F46 /* ProfileVC.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D50450E72C07317500CD1F46 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				D50450F02C0731DF00CD1F46 /* UserListVC.swift */,
+				D50450F22C0731EF00CD1F46 /* SignInVC.swift */,
+				D50450F42C0731FB00CD1F46 /* SignUpVC.swift */,
+				D50450F62C07320F00CD1F46 /* SettingVC.swift */,
+				D50450F82C07322D00CD1F46 /* TabBarVC.swift */,
+				D50450FA2C07325100CD1F46 /* PostVC.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +243,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D50450CF2C072DD900CD1F46 /* ViewController.swift in Sources */,
+				D50451052C0732B100CD1F46 /* HapticsManager.swift in Sources */,
+				D50451012C07328700CD1F46 /* DatabaseManager.swift in Sources */,
+				D50450FB2C07325100CD1F46 /* PostVC.swift in Sources */,
+				D50450E52C07314F00CD1F46 /* HomeVC.swift in Sources */,
+				D50450ED2C0731BC00CD1F46 /* NotificationVC.swift in Sources */,
+				D50450FD2C07326600CD1F46 /* APICaller.swift in Sources */,
+				D50450F32C0731EF00CD1F46 /* SignInVC.swift in Sources */,
+				D50450EF2C0731CB00CD1F46 /* ProfileVC.swift in Sources */,
 				D50450CB2C072DD900CD1F46 /* AppDelegate.swift in Sources */,
+				D50450EB2C0731A700CD1F46 /* CameraVC.swift in Sources */,
+				D50450E92C07319A00CD1F46 /* ExploreVC.swift in Sources */,
+				D50451032C07329400CD1F46 /* AuthenticationManager.swift in Sources */,
+				D50450F72C07320F00CD1F46 /* SettingVC.swift in Sources */,
 				D50450CD2C072DD900CD1F46 /* SceneDelegate.swift in Sources */,
+				D50450F52C0731FB00CD1F46 /* SignUpVC.swift in Sources */,
+				D50450FF2C07327400CD1F46 /* StorageManager.swift in Sources */,
+				D50450F92C07322D00CD1F46 /* TabBarVC.swift in Sources */,
+				D50450F12C0731DF00CD1F46 /* UserListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
