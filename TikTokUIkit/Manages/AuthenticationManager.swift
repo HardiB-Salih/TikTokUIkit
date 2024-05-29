@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import FirebaseAuth
+
+final class AuthManager {
+    public static let shared = AuthManager()
+    private init() { }
+    
+    // Public
+    
+}

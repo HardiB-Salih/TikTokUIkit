@@ -14,11 +14,6 @@ class TabBarVC: UITabBarController {
         setupController()
     }
     
-    
-    
-    
-    
-    
     private func setupController() {
         let home = HomeVC()
         let explore = ExploreVC()
@@ -28,7 +23,6 @@ class TabBarVC: UITabBarController {
         
         home.title = "Home"
         explore.title = "Explore"
-        camera.title = "Camera"
         notification.title = "Notification"
         profile.title = "Profile"
         
@@ -43,6 +37,6 @@ class TabBarVC: UITabBarController {
         nav3.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "bell.badge") , tag: 4)
         nav4.tabBarItem = UITabBarItem(title: nil, image:UIImage(systemName: "person") , tag: 5)
 
-        setViewControllers([nav1, nav2, camera, nav3, nav4], animated: false)
+        setViewControllers([nav1, nav2, camera, nav3, nav4], animated: true)
     }
 }
