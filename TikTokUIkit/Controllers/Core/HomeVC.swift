@@ -12,10 +12,8 @@ class HomeVC: UIViewController {
     private let horizantalScrollview: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.bounces = false
-        scrollView.backgroundColor = .systemRed
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
@@ -26,6 +24,16 @@ class HomeVC: UIViewController {
                                                 navigationOrientation: .vertical,
                                                 options: [:])
     
+    
+    private let segmentedControll : UISegmentedControl = {
+        let titles = ["Following", "For you"]
+        let control = UISegmentedControl(items: titles)
+        control.selectedSegmentIndex = 1
+        control.backgroundColor = nil
+        control.selectedSegmentTintColor = .white
+        return control
+    }()
+    
     private var forYouPosts = PostModel.mockModels()
     private var followingPosts = PostModel.mockModels()
 
@@ -35,7 +43,9 @@ class HomeVC: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(horizantalScrollview)
         setUpFeed()
+        horizantalScrollview.delegate = self
         horizantalScrollview.contentOffset = CGPoint(x: view.width, y: 0)
+        setUpHeaderButtons()
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,7 +62,14 @@ class HomeVC: UIViewController {
         setupForYouFeed()
         
     }
-    
+    func setUpHeaderButtons() {
+        segmentedControll.addTarget(self, 
+                                    action: #selector(didChangeSegmentedControl),
+                                    for: .valueChanged)
+        navigationItem.titleView = segmentedControll
+        
+        
+    }
     func setUpFollowingFeed() {
         guard let model = followingPosts.first else { return }
         
@@ -93,9 +110,21 @@ class HomeVC: UIViewController {
         
     }
     
+
+    //MARK: - Actions
+    @objc func didChangeSegmentedControl(sender: UISegmentedControl) {
+        horizantalScrollview.setContentOffset(CGPoint(x: view.width * CGFloat(sender.selectedSegmentIndex), y: 0), animated: true)
+    }
+    
+    
+    
+    //MARK: - Helpers
+    //MARK: - Public
+    //MARK: - Private
+    
 }
 
-
+//MARK: - UIPageViewControllerDataSource
 extension HomeVC: UIPageViewControllerDataSource {
     var currentPost: [PostModel] {
         if horizantalScrollview.contentOffset.x == 0 {
@@ -179,10 +208,18 @@ extension HomeVC: UIPageViewControllerDataSource {
         // Return the newly created view controller.
         return vc
     }
+    
+}
 
-    
-    
-
-    
-    
+//MARK: - UIScrollViewDelegate
+extension HomeVC : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let halfWidth = view.frame.width / 2
+        
+        if scrollView.contentOffset.x <= halfWidth {
+            segmentedControll.selectedSegmentIndex = 0
+        } else {
+            segmentedControll.selectedSegmentIndex = 1
+        }
+    }
 }

@@ -8,9 +8,11 @@
 import UIKit
 
 class PostVC: UIViewController {
-    
+    //MARK: - Properties
+   
     let model: PostModel
     
+    //MARK: - Lifecycle
     init(model: PostModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -39,11 +41,12 @@ class PostVC: UIViewController {
         ]
         
         view.backgroundColor = colors.randomElement()
-
-        
-        
-        
-        
-        
     }
+    //MARK: - Actions
+    //MARK: - Helpers
+    //MARK: - Public
+    //MARK: - Private
+
+
+
 }
