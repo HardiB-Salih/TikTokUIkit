@@ -27,6 +27,14 @@
 		D50451012C07328700CD1F46 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50451002C07328700CD1F46 /* DatabaseManager.swift */; };
 		D50451032C07329400CD1F46 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50451022C07329400CD1F46 /* AuthenticationManager.swift */; };
 		D50451052C0732B100CD1F46 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50451042C0732B100CD1F46 /* HapticsManager.swift */; };
+		D504510A2C0736F800CD1F46 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D50451092C0736F800CD1F46 /* FirebaseAnalytics */; };
+		D504510C2C0736F800CD1F46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D504510B2C0736F800CD1F46 /* FirebaseAuth */; };
+		D504510E2C0736F800CD1F46 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D504510D2C0736F800CD1F46 /* FirebaseCrashlytics */; };
+		D50451102C0736F800CD1F46 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D504510F2C0736F800CD1F46 /* FirebaseDatabase */; };
+		D50451122C0736F800CD1F46 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D50451112C0736F800CD1F46 /* FirebaseDatabaseSwift */; };
+		D50451142C0736F800CD1F46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D50451132C0736F800CD1F46 /* FirebaseStorage */; };
+		D50451172C0737FF00CD1F46 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D50451162C0737FF00CD1F46 /* JGProgressHUD */; };
+		D50451192C0739F800CD1F46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D50451182C0739F800CD1F46 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +60,7 @@
 		D50451002C07328700CD1F46 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D50451022C07329400CD1F46 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		D50451042C0732B100CD1F46 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		D50451182C0739F800CD1F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50451122C0736F800CD1F46 /* FirebaseDatabaseSwift in Frameworks */,
+				D50451172C0737FF00CD1F46 /* JGProgressHUD in Frameworks */,
+				D504510E2C0736F800CD1F46 /* FirebaseCrashlytics in Frameworks */,
+				D504510A2C0736F800CD1F46 /* FirebaseAnalytics in Frameworks */,
+				D50451102C0736F800CD1F46 /* FirebaseDatabase in Frameworks */,
+				D504510C2C0736F800CD1F46 /* FirebaseAuth in Frameworks */,
+				D50451142C0736F800CD1F46 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,13 +100,14 @@
 		D50450C92C072DD900CD1F46 /* TikTokUIkit */ = {
 			isa = PBXGroup;
 			children = (
+				D50450DE2C0730D200CD1F46 /* Resorces */,
 				D50450E32C07310F00CD1F46 /* Manages */,
 				D50450E22C07310400CD1F46 /* ViewModels */,
 				D50450E12C0730FE00CD1F46 /* Models */,
 				D50450E02C0730F300CD1F46 /* Views */,
 				D50450DF2C0730E900CD1F46 /* Controllers */,
-				D50450DE2C0730D200CD1F46 /* Resorces */,
 				D50450D82C072DDE00CD1F46 /* Info.plist */,
+				D50451182C0739F800CD1F46 /* GoogleService-Info.plist */,
 			);
 			path = TikTokUIkit;
 			sourceTree = "<group>";
@@ -189,6 +206,15 @@
 			dependencies = (
 			);
 			name = TikTokUIkit;
+			packageProductDependencies = (
+				D50451092C0736F800CD1F46 /* FirebaseAnalytics */,
+				D504510B2C0736F800CD1F46 /* FirebaseAuth */,
+				D504510D2C0736F800CD1F46 /* FirebaseCrashlytics */,
+				D504510F2C0736F800CD1F46 /* FirebaseDatabase */,
+				D50451112C0736F800CD1F46 /* FirebaseDatabaseSwift */,
+				D50451132C0736F800CD1F46 /* FirebaseStorage */,
+				D50451162C0737FF00CD1F46 /* JGProgressHUD */,
+			);
 			productName = TikTokUIkit;
 			productReference = D50450C72C072DD900CD1F46 /* TikTokUIkit.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +243,10 @@
 				Base,
 			);
 			mainGroup = D50450BE2C072DD900CD1F46;
+			packageReferences = (
+				D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D50451152C0737FF00CD1F46 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+			);
 			productRefGroup = D50450C82C072DD900CD1F46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +263,7 @@
 			files = (
 				D50450D42C072DDE00CD1F46 /* Assets.xcassets in Resources */,
 				D50450D72C072DDE00CD1F46 /* Base in Resources */,
+				D50451192C0739F800CD1F46 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +504,63 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.26.0;
+			};
+		};
+		D50451152C0737FF00CD1F46 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D50451092C0736F800CD1F46 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D504510B2C0736F800CD1F46 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D504510D2C0736F800CD1F46 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		D504510F2C0736F800CD1F46 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		D50451112C0736F800CD1F46 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		D50451132C0736F800CD1F46 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451082C0736F800CD1F46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		D50451162C0737FF00CD1F46 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50451152C0737FF00CD1F46 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D50450BF2C072DD900CD1F46 /* Project object */;
 }
