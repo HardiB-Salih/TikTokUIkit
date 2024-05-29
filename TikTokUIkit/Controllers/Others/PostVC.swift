@@ -8,22 +8,42 @@
 import UIKit
 
 class PostVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    let model: PostModel
+    
+    init(model: PostModel) {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let colors: [UIColor] = [
+            .red,
+            .blue,
+            .green,
+            .yellow,
+            .orange,
+            .purple,
+            .brown,
+            .cyan,
+            .magenta,
+            .gray,
+            .black,
+            .white
+        ]
+        
+        view.backgroundColor = colors.randomElement()
 
+        
+        
+        
+        
+        
+    }
 }

@@ -34,6 +34,8 @@
 		D50451142C0736F800CD1F46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D50451132C0736F800CD1F46 /* FirebaseStorage */; };
 		D50451172C0737FF00CD1F46 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D50451162C0737FF00CD1F46 /* JGProgressHUD */; };
 		D50451192C0739F800CD1F46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D50451182C0739F800CD1F46 /* GoogleService-Info.plist */; };
+		D504511C2C0758E700CD1F46 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504511B2C0758E700CD1F46 /* Extensions.swift */; };
+		D504511E2C0768B600CD1F46 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504511D2C0768B600CD1F46 /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		D50451022C07329400CD1F46 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		D50451042C0732B100CD1F46 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		D50451182C0739F800CD1F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D504511B2C0758E700CD1F46 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D504511D2C0768B600CD1F46 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		D50450DE2C0730D200CD1F46 /* Resorces */ = {
 			isa = PBXGroup;
 			children = (
+				D504511A2C0758D700CD1F46 /* Extensions */,
 				D50450D32C072DDE00CD1F46 /* Assets.xcassets */,
 				D50450CA2C072DD900CD1F46 /* AppDelegate.swift */,
 				D50450CC2C072DD900CD1F46 /* SceneDelegate.swift */,
@@ -140,6 +145,7 @@
 		D50450E12C0730FE00CD1F46 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D504511D2C0768B600CD1F46 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +191,14 @@
 				D50450FA2C07325100CD1F46 /* PostVC.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		D504511A2C0758D700CD1F46 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D504511B2C0758E700CD1F46 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D50451052C0732B100CD1F46 /* HapticsManager.swift in Sources */,
+				D504511C2C0758E700CD1F46 /* Extensions.swift in Sources */,
 				D50451012C07328700CD1F46 /* DatabaseManager.swift in Sources */,
 				D50450FB2C07325100CD1F46 /* PostVC.swift in Sources */,
 				D50450E52C07314F00CD1F46 /* HomeVC.swift in Sources */,
@@ -284,6 +299,7 @@
 				D50451032C07329400CD1F46 /* AuthenticationManager.swift in Sources */,
 				D50450F72C07320F00CD1F46 /* SettingVC.swift in Sources */,
 				D50450CD2C072DD900CD1F46 /* SceneDelegate.swift in Sources */,
+				D504511E2C0768B600CD1F46 /* PostModel.swift in Sources */,
 				D50450F52C0731FB00CD1F46 /* SignUpVC.swift in Sources */,
 				D50450FF2C07327400CD1F46 /* StorageManager.swift in Sources */,
 				D50450F92C07322D00CD1F46 /* TabBarVC.swift in Sources */,
