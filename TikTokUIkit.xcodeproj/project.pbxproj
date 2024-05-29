@@ -168,6 +168,7 @@
 		D50450E62C07316F00CD1F46 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D50450F82C07322D00CD1F46 /* TabBarVC.swift */,
 				D50450E42C07314F00CD1F46 /* HomeVC.swift */,
 				D50450E82C07319A00CD1F46 /* ExploreVC.swift */,
 				D50450EA2C0731A700CD1F46 /* CameraVC.swift */,
@@ -184,7 +185,6 @@
 				D50450F22C0731EF00CD1F46 /* SignInVC.swift */,
 				D50450F42C0731FB00CD1F46 /* SignUpVC.swift */,
 				D50450F62C07320F00CD1F46 /* SettingVC.swift */,
-				D50450F82C07322D00CD1F46 /* TabBarVC.swift */,
 				D50450FA2C07325100CD1F46 /* PostVC.swift */,
 			);
 			path = Others;
