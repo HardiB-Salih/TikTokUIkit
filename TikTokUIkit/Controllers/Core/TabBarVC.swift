@@ -19,7 +19,7 @@ class TabBarVC: UITabBarController {
         let explore = ExploreVC()
         let camera = CameraVC()
         let notification = NotificationVC()
-        let profile = ProfileVC()
+        let profile = ProfileVC(user: User(username: "Hardi", profilePictureURL: nil, identifier: UUID().uuidString))
         
         explore.title = "Explore"
         notification.title = "Notification"
@@ -30,9 +30,10 @@ class TabBarVC: UITabBarController {
         let nav3 = UINavigationController(rootViewController: notification)
         let nav4 = UINavigationController(rootViewController: profile)
         
-        nav1.navigationBar.backgroundColor = .clear
-        nav1.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        nav1.navigationBar.shadowImage = UIImage()
+        nav1.isNavigationBarHidden = true
+//        nav1.navigationBar.backgroundColor = .clear
+//        nav1.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        nav1.navigationBar.shadowImage = UIImage()
         
         
         

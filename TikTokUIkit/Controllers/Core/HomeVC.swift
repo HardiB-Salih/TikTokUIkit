@@ -9,18 +9,19 @@ import UIKit
 
 class HomeVC: UIViewController {
     //MARK: - Properties
-    private let horizantalScrollview: UIScrollView = {
+    let horizantalScrollview: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.bounces = false
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    private let forYouPagingController = UIPageViewController(transitionStyle: .scroll,
+    let forYouPagingController = UIPageViewController(transitionStyle: .scroll,
                                                 navigationOrientation: .vertical,
                                                 options: [:])
-    private let followingPagingController = UIPageViewController(transitionStyle: .scroll,
+    let followingPagingController = UIPageViewController(transitionStyle: .scroll,
                                                 navigationOrientation: .vertical,
                                                 options: [:])
     
@@ -36,10 +37,12 @@ class HomeVC: UIViewController {
     
     private var forYouPosts = PostModel.mockModels()
     private var followingPosts = PostModel.mockModels()
+    var isSegmentControlChanging = false
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemBackground
         view.addSubview(horizantalScrollview)
         setUpFeed()
@@ -51,6 +54,7 @@ class HomeVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         horizantalScrollview.frame = view.bounds
+        segmentedControll.frame = CGRect(x: (view.width / 2) - 100 , y: 60, width: 200, height: 30)
         
         
     }
@@ -66,14 +70,16 @@ class HomeVC: UIViewController {
         segmentedControll.addTarget(self, 
                                     action: #selector(didChangeSegmentedControl),
                                     for: .valueChanged)
-        navigationItem.titleView = segmentedControll
+//        navigationItem.titleView = segmentedControll
+        view.addSubview(segmentedControll)
         
         
     }
     func setUpFollowingFeed() {
         guard let model = followingPosts.first else { return }
-        
-        followingPagingController.setViewControllers([PostVC(model: model)],
+        let vc = PostVC(model: model)
+        vc.delegate = self
+        followingPagingController.setViewControllers([vc],
                                             direction: .forward,
                                             animated: false)
         
@@ -91,8 +97,9 @@ class HomeVC: UIViewController {
     func setupForYouFeed(){
         guard let model = forYouPosts.first else { return }
         
-        
-        forYouPagingController.setViewControllers([PostVC(model: model)],
+        let vc = PostVC(model: model)
+        vc.delegate = self
+        forYouPagingController.setViewControllers([vc],
                                             direction: .forward,
                                             animated: false)
         
@@ -113,6 +120,7 @@ class HomeVC: UIViewController {
 
     //MARK: - Actions
     @objc func didChangeSegmentedControl(sender: UISegmentedControl) {
+        isSegmentControlChanging = true
         horizantalScrollview.setContentOffset(CGPoint(x: view.width * CGFloat(sender.selectedSegmentIndex), y: 0), animated: true)
     }
     
@@ -166,7 +174,7 @@ extension HomeVC: UIPageViewControllerDataSource {
         
         // Create a new PostVC with the previous post model.
         let vc = PostVC(model: model)
-        
+        vc.delegate = self
         // Return the newly created view controller.
         return vc
     }
@@ -204,16 +212,17 @@ extension HomeVC: UIPageViewControllerDataSource {
         
         // Create a new PostVC with the next post model.
         let vc = PostVC(model: model)
-        
+        vc.delegate = self
         // Return the newly created view controller.
         return vc
     }
     
 }
 
-//MARK: - UIScrollViewDelegate
+// MARK: - UIScrollViewDelegate
 extension HomeVC : UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !isSegmentControlChanging else { return }
         let halfWidth = view.frame.width / 2
         
         if scrollView.contentOffset.x <= halfWidth {
@@ -222,4 +231,75 @@ extension HomeVC : UIScrollViewDelegate {
             segmentedControll.selectedSegmentIndex = 1
         }
     }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+            isSegmentControlChanging = false
+        }
+}
+
+
+extension HomeVC: PostVCDelegate {
+    func postViewController(_ vc: PostVC, didTapProfileButtonFor post: PostModel) {
+        let vc = ProfileVC(user: post.user)
+        navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+    }
+    func postViewController(_ vc: PostVC, didTapCommentButtonFor post: PostModel) {
+       
+        horizantalScrollview.isScrollEnabled = false
+        if horizantalScrollview.contentOffset.x == 0 {
+            // We in Folloing
+            followingPagingController.dataSource = nil
+        } else {
+            //For You
+            forYouPagingController.dataSource = nil
+        }
+        
+        let vc = CommentVC(post: post)
+        vc.delegate = self
+        addChild(vc)
+        vc.didMove(toParent: self)
+        view.addSubview(vc.view)
+        let frame: CGRect = CGRect(x: 0, y: view.height, width: view.width, height: view.height * 0.70)
+        
+        vc.view.frame = frame
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(x: 0,
+                                   y: self.view.height - frame.height,
+                                   width: frame.width,
+                                   height: frame.height)
+        }
+    }
+    
+    
+}
+
+extension HomeVC: CommentVCDelegate {
+    func didTapCloseForComment(for vc: CommentVC) {
+        // Close it with animation
+        let frame = vc.view.frame
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(x: 0,
+                                   y: self.view.height,
+                                   width: frame.width,
+                                   height: frame.height)
+        } completion: { [ weak self ] done in
+            if done {
+                DispatchQueue.main.async {
+                    // remove it from the chiled
+                    vc.view.removeFromSuperview()
+                    vc.removeFromParent()
+                    // allow horizantall and vertical scrolling
+                    self?.horizantalScrollview.isScrollEnabled = true
+                    self?.followingPagingController.dataSource = self
+                    self?.forYouPagingController.dataSource = self
+
+                }
+            }
+        }
+    }
+    
+    
 }
